@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 160px;
+    height: 60px;
+    display: block;
+    margin: auto;
+}
+
+#navbar-signup {
+    background-color:#000033;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar-signup a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding-top: 15px;
+    margin-top: 5%;
+    font-size: larger;
+}
+
+/* all navbar items above  */
+
+#allContent {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+}
+
+#L1 {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 600;
+
+}
+
+#L2 {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 600;
+
+}
+
+#email {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color:rgb(197, 236, 220);
+    border-radius: 34px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#password {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: rgb(197, 236, 220);
+    border-radius: 34px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#divForm h2 {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 30px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 32px;
+    color: rgb(55, 55, 55);
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+
+#LoginBtn{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #24e0a4;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+#LoginBtn:hover {
+    background-color: #00f3a6;
+  }
+
+  #gmail{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #f03b3b;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+  #fb{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #0823f1;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+#acc{
+    box-sizing: border-box;
+    /* margin: 0px 8px; */
+    min-width: 0px;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 20px;
+    color: rgb(55, 55, 55);
+    font-weight: 400;
+    text-align: center;
+    /* margin-left: 30%; */
+    /* margin-bottom: 25px; */
+    
+}
+#createAcc{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color:rgb(197, 236, 220);
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+
+}
+
+#createAcc:hover {
+    background-color: #00f3a6;
+  }
+
+#messageLogin{
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+#closebtn{
+    margin-right: 20px;
+    margin-top: 18px;
+}
+#banners>img{
+ 
+    width:80%;
+}
+
+
+@media all and (max-width:500px) {
+   #banners>img{
+    display: none;
+   }
+  
+}
+
+ #banners>img:hover {
+    transform: scale(1.050); 
+ }  
