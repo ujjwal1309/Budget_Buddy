@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const { connection } = require("./config/db");
+const jwt=require("jsonwebtoken");
+const { googleRouter } = require("./routes/google.route");
 require("dotenv").config();
 
 const app = express();
@@ -15,6 +17,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
+app.use("/auth",googleRouter);
+
 port = process.env.PORT || 4000;
 
 app.listen(port, async () => {
@@ -24,6 +28,6 @@ app.listen(port, async () => {
     console.log("DB is connected");
   } catch (error) {
     console.log("DB isn't connected");
-    console.log(error)
+    console.log(error);
   }
 });
