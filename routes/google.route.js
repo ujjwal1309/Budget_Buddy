@@ -13,7 +13,7 @@ googleRouter.get(
 googleRouter.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/login",
+    failureRedirect: "/loginPage",
     session: false,
   }),
   function (req, res) {
@@ -30,6 +30,9 @@ googleRouter.get(
     res.redirect(`/?token=${token}&rtoken=${rtoken}`);
   }
 );
+
+//------------------------------------------------------------------------------------------->
+//Microsoft
 
 googleRouter.get(
   "/microsoft",
