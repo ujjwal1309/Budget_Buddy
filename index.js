@@ -6,7 +6,7 @@ const { connection } = require("./config/db");
 const jwt=require("jsonwebtoken");
 const { googleRouter } = require("./routes/google.route");
 const {DataRouter} = require('./routes/data.route');
-const {authenticateUser} = require("./middlewares/auth.middleware")
+const { userRouter } = require("./routes/user.routes");
 require("dotenv").config();
 
 
@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
+app.use("/users",userRouter);
 app.use("/auth",googleRouter);
 app.use("/budget",authenticateUser, DataRouter);
 
