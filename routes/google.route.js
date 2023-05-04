@@ -31,6 +31,9 @@ googleRouter.get(
   }
 );
 
+//------------------------------------------------------------------------------------------->
+//Microsoft
+
 googleRouter.get(
   "/microsoft",
   passport2.authenticate("microsoft", { scope: ['openid', 'profile', 'email'] })

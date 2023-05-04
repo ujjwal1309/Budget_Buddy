@@ -12,6 +12,7 @@ passport.use(
     },
     async function (accessToken, refreshToken, profile, cb) {
       const { name, email, picture } = profile._json;
+      console.log(name,email,picture);
       const userData = await User.findOne({ email });
       if (userData != null) {
         return cb(null, userData);
