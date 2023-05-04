@@ -9,6 +9,8 @@ const {DataRouter} = require('./routes/data.route');
 const { userRouter } = require("./routes/user.routes");
 require("dotenv").config();
 
+
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -22,7 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/users",userRouter);
 app.use("/auth",googleRouter);
-app.use("/budget", DataRouter);
+app.use("/budget",authenticateUser, DataRouter);
 
 port = process.env.PORT || 4000;
 

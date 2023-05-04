@@ -12,6 +12,7 @@ const DataSchema = mongoose.Schema({
       },
       purpose: {
         type: String,
+        enum: ['Income', 'Grocery', 'Insurence','Electricity Bill','Room Rent','Tution Fee','Petrol','Gas-Cylinder','Others'],
         required: true
       },
       user: {
@@ -29,3 +30,4 @@ const DataSchema = mongoose.Schema({
 const DataModel = mongoose.model("data", DataSchema)
 
 module.exports={DataModel}
+
