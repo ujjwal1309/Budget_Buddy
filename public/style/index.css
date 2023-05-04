@@ -11,8 +11,10 @@
     width: 100%;
     background: white;
     font-family: sans-serif;
-    position: relative;
     position: sticky;
+    top: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* position: sticky; */
     /* border: 2px solid red; */
 }
 
@@ -24,7 +26,9 @@ nav {
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    background: white;
+    top: 0;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    /* background: white; */
     /* border: 2px solid red; */
 }
 
@@ -61,7 +65,7 @@ nav ul li a:hover {
 }
 
 #menu_list a:hover {
-    color: #ff6f61;
+    color: rgb(36, 224, 164);
 
 }
 
@@ -75,7 +79,7 @@ nav ul li a:hover {
 #menu_list ul a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 32px;
     padding: 0 15px;
     font-weight: 500;
@@ -90,12 +94,12 @@ nav ul li a:hover {
 }
 
 #menu_list ul li:hover {
-    color: #ff6f61;
+    color: rgb(36, 224, 164);
 }
 
 #menu_list ul ul {
     position: absolute;
-    background: rgb(36, 224, 164);
+    background: white;
     top: 100%;
     left: 0;
     display: none;
@@ -144,8 +148,56 @@ nav ul li a:hover {
     border: none;
     border-radius: 34px;
 }
-@media(max-width:990px) {
-    
+
+@media(max-width:768px) {
+
+    .max-width {
+        padding: 0 50px;
+    }
+    .navbar #menu_list {
+        display: none;
+    }
+    .one .one1  {
+        display: inline-block;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        border-top: 1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    }
+    .one .one2{
+        display: none;
+    }
+
+    .banner{
+        display:none !important;
+    }
+
+    .body {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    .body .container {
+        display: inline-block;
+    }
+
+    .body1 .video{
+        display: none;
+
+    }
+
+    .body1 .body11{
+        display: inline-block
+    }
+    .banner2{
+        display:none !important;
+    }
+    .footer .footer1{
+        display:inline-7;
+    }
 }
 
 
@@ -234,17 +286,156 @@ nav ul li a:hover {
     /* border: 2px solid red; */
 
 }
+
 /* finish */
 
 /* ///////////banner */
 .banner {
-    background-color:rgb(36, 224, 164);
-        /* border: 2px solid red; */
+    background-color: rgb(36, 224, 164);
+    /* border: 2px solid red; */
 
 }
+
 .banner img {
     margin-top: 50px;
     width: 100%;
     /* border: 2px solid red; */
 
+}
+
+
+/* body */
+
+.body {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin-top: 100px;
+    gap: 50px;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+}
+
+
+/* body1 */
+.body1 {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    justify-content: space-between;
+    display: flex;
+    /* border: 2px solid red; */
+}
+
+.body11 {
+    margin: auto;
+}
+
+.body11 h1 {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 600px;
+}
+
+.body11 p {
+    font-size: 120%;
+    margin-bottom: 20px;
+    font-weight: 300px;
+    /* border: 2px solid red; */
+}
+
+
+
+/* banner2 */
+.banner2 {
+    margin-top: 80px;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(36, 224, 164);
+    border: 2px solid rgb(36, 224, 164);
+}
+
+.banner2 h1 {
+    margin-top: 5vh;
+    /* border: 2px solid red; */
+
+}
+
+.body1111 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.body1111 p {
+    margin-top: 20px;
+}
+
+.body1111 button {
+    margin-top: 20px;
+}
+
+.footer {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.footer ul li {
+    padding: 10px;
+}
+
+/* /////last//////////////////////////////// */
+.heart-emoji {
+    font-size: 20px;
+    /* Change the size to your preference */
+    color: #808080;
+    /* Change the color to your preference */
+}
+
+.last {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+}
+
+.last .logolast img {
+    width: 90%;
+}
+.last .logolast .privacy{
+    margin-top: 50px;
+    /* border: 2px solid red; */
+
+}
+
+.last .app img {
+    width: 50%;
+}
+
+.btnlast div {
+    margin-top: 20px;
+    padding: 2px;
+    /* border: 2px solid red; */
+}
+
+/* /////end//////////////////////////////// */
+.icon1 {
+    margin-top: 20px;
 }
