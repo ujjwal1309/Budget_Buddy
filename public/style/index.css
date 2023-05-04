@@ -145,49 +145,7 @@ nav ul li a:hover {
     border-radius: 34px;
 }
 @media(max-width:990px) {
-
-    .max-width {
-        padding: 0 50px;
-    }
-
-    .navbar nav {
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        left: -100%;
-        top: 0;
-        text-align: center;
-        background: #111;
-        padding-top: 80px;
-        transition: all 0.3s ease;
-    }
-
-    .menu-btn {
-        display: block;
-        z-index: 999;
-    }
-
-    .navbar .menu_list.active {
-        left: 0;
-
-    }
-
-    .menu-btn i.active:before {
-        content: "\f00d";
-    }
-
-    .navbar .menu li {
-        display: block;
-    }
-
-    .navbar .menu li a {
-        display: inline-block;
-        margin: 20px 0;
-        font-size: 25px;
-    }
-    .max-width {
-        max-width: 800px;
-    }
+    
 }
 
 
