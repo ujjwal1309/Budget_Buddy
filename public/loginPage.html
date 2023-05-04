@@ -10,64 +10,53 @@
 <link rel="stylesheet" href="./style/loginPage.css">
 
 
-<body>
-    <!-- <div id="navbar-signup">
-        <nav>
-            <img src="assets/images/logo4.jpg" alt="Logo" id="logo">
 
-        </nav>
-        <div id="closebtn"><a href="index.html"> Close X</a></div>
-    </div> -->
+ <body>
+
 
     <div id="allContent">
         <div id="divForm">
 
             <form action="" id="loginForm">
-                <h2 style="color: #00ac64;">Sign In</h2>
-                <div id="inpEmail">
-                    <label id="L1" for="">Email Address</label> <br>
-                    <input id="email" type="email" placeholder="Enter Email Address">
-                </div>
-                <div id="inpPass">
-                    <label id="L2" for="">Password</label> <br>
-                    <input id="password" type="password" placeholder="Enter Password">
-                </div>
+                <h2 style="color: #00ac64;" >Sign In</h2>
+            <div id="inpEmail">
+                <label id="L1" for="">Email Address</label> <br>
+                <input id="email" type="email" placeholder="Enter Email Address">
+            </div>
+            <div id="inpPass">
+                <label id="L2" for="">Password</label> <br>
+                <input id="password" type="password" placeholder="Enter Password">
+            </div>
+
+        
+       <span id="messageLogin"> </span>
+
+    <div>
+        <input type="submit" id="LoginBtn" value="Sign In">
+
+       <a style="text-decoration: none;" href="http://localhost:4000/auth/google"><input type="button" id="gmail" value="Continue with Google"></a> 
 
 
-                <span id="messageLogin"> </span>
+        <input type="button" id="fb" value="Continue with Facebook">
+        
+    </div>
+   
+    <div id="acc">Don't Have an Account?</div>
 
-                <div>
-                    <input type="submit" id="LoginBtn" value="Sign In">
 
-                    <a href="http://localhost:4000/auth/google"><input type="button" id="gmail"
-                            value="Continue with Google"></a>
-                    <input type="button" id="fb" value="Continue with Facebook">
 
-                </div>
-
-                <div id="acc">Don't Have an Account?</div>
-
-                <!-- <div > <button> <a href="./signUpPage.html">Create An Account</a> </button>
-    </div> -->
-
-                <div>
-                    <a style="color:black ; text-decoration: none;" href="./signUpPage.html"> <input type="button"
-                            id="createAcc" value="Create An Account"> </a>
-                </div>
-            </form>
-        </div>
-        <div id="banners">
-            <img id="imgbanner"
-                src="https://pocketguard.com/wp-content/themes/pocket-guard/assets/images/intro/home/pic-intro.webp"
-                alt="">
-        </div>
-
+    <div>
+        <a style="  text-decoration: none;" href="./signUpPage.html"> <input type="button" id="createAcc" value="Create An Account"> </a>
+    </div>
+    </form>
+     </div>
+     <div id="banners">
+    <img id="imgbanner" src="https://pocketguard.com/wp-content/themes/pocket-guard/assets/images/intro/home/pic-intro.webp" alt="">
+     </div>
 
 
 </body>
-<!-- <script>
-    AOS.init();
-    </script> -->
-<script src="./loginPage.js"></script>
+
+<script src="./script/loginPage.js"></script>
 
 </html>
