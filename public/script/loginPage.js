@@ -1,22 +1,44 @@
 // const inputdataArr = JSON.parse(localStorage.getItem("userData")) || [];
-const messageLogin = document.getElementById("messageLogin");
-const logo = document.getElementById("logo");
-logo.style.cursor = "pointer";
-logo.addEventListener("click", () => {
-  window.location.href = "index.html";
-});
+// const messageLogin = document.getElementById("messageLogin");
+// const logo = document.getElementById("logo");
+// logo.style.cursor = "pointer";
+// logo.addEventListener("click", () => {
+//   window.location.href = "index.html";
+// });
 let loginForm = document.getElementById("loginForm");
-loginForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
-  let email = document.getElementById("email");
-  let password = document.getElementById("password");
-  await fetch("", {method : "POST" ,headers: {
-    "Content-type": "application/json",
+loginForm
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
     
-  },
-body:JSON.stringify({email,password})
-} ) //he we can use mongodb API link
-})
+    let res = await fetch("http://localhost:4000/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+
+        email: email,
+        password: password,
+        
+      }),
+    });
+    let data = await res.json();
+console.log(data);
+
+//setting data in local storage
+
+localStorage.setItem("token", JSON.stringify(data.token))
+localStorage.setItem("refresh", JSON.stringify(data.refreshToken))
+  });
+
+
+
+
+
+
+
 
 // to merge HOMEPAGE
 // window.location.href= "hp.html"
