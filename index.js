@@ -6,7 +6,10 @@ const { connection } = require("./config/db");
 const jwt=require("jsonwebtoken");
 const { googleRouter } = require("./routes/google.route");
 const {DataRouter} = require('./routes/data.route');
+const {authenticateUser} = require("./middlewares/auth.middleware")
 require("dotenv").config();
+
+
 
 const app = express();
 app.use(express.json());
@@ -20,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth",googleRouter);
-app.use("/budget", DataRouter);
+app.use("/budget",authenticateUser, DataRouter);
 
 port = process.env.PORT || 4000;
 
