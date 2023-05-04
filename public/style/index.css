@@ -439,3 +439,21 @@ nav ul li a:hover {
 .icon1 {
     margin-top: 20px;
 }
+
+
+/* //footericon */
+.footer-iconTop{
+margin-left: 90%;
+background-color: rgb(36, 224, 164);
+margin-bottom: 20px;
+border: none;
+border-radius: 30px;
+
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 0.8rem;
+    
+}
