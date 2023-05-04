@@ -10,11 +10,16 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+app.set("views", __dirname + "/public");
+app.set("view engine", "ejs");
+app.use(express.static("./public"));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
-
-app.use("/user",googleRouter);
+app.use("/auth",googleRouter);
 app.use("/budget", DataRouter);
 
 port = process.env.PORT || 4000;
