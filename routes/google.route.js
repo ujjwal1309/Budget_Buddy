@@ -30,13 +30,7 @@ googleRouter.get(
     res.redirect(`/?token=${token}&rtoken=${rtoken}`);
   }
 );
-//------------------------------------------------------------------------------------------->
-//Microsoft
 
-googleRouter.get(
-  "/microsoft",
-  passport2.authenticate("microsoft", { scope: ['openid', 'profile', 'email'] })
-);
 
 
 module.exports = { googleRouter };

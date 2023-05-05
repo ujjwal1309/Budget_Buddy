@@ -1,17 +1,17 @@
 const express = require('express');
 const DataRouter = express.Router();
-const {GetAllData,CreateData,UpdateData,DeleteData} = require("../controllers/data.controller")
+const {GetAllData,CreateData,UpdateData,DeleteData} = require("../controller/data.controller")
 
 
 
-DataRouter.get('/getalldata',GetAllData);
+DataRouter.get('/get-all-data',GetAllData);
 
 
-DataRouter.post('/createdata', CreateData);
+DataRouter.post('/add-data', CreateData);
 
-DataRouter.patch('/updatedata/:id', UpdateData);
+DataRouter.put('/update-data/:id', UpdateData);
 
-DataRouter.delete('/deletedata/:id', DeleteData);
+DataRouter.delete('/delete-data/:id', DeleteData);
 
 
 
