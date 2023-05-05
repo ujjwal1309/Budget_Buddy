@@ -25,7 +25,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     /* background: white; */
@@ -128,15 +128,19 @@ nav ul li a:hover {
     color: black;
     width: 9rem;
     height: 7vh;
-    border: 2px solid rgb(10, 10, 10);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 34px;
     background-color: white;
 }
 
+#login a {
+    text-decoration: none;
+}
+
 #login:hover {
     cursor: pointer;
-    color: white;
-    background-color: black;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
 
 #register {
@@ -149,15 +153,22 @@ nav ul li a:hover {
     border-radius: 34px;
 }
 
-@media(max-width:768px) {
+#register a {
+    text-decoration: none;
+    color: black;
+}
+
+@media(max-width:900px) {
 
     .max-width {
         padding: 0 50px;
     }
+
     .navbar #menu_list {
         display: none;
     }
-    .one .one1  {
+
+    .one .one1 {
         display: inline-block;
         top: 100%;
         left: 0;
@@ -166,12 +177,13 @@ nav ul li a:hover {
         border-top: 1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
     }
-    .one .one2{
+
+    .one .one2 {
         display: none;
     }
 
-    .banner{
-        display:none !important;
+    .banner {
+        display: none !important;
     }
 
     .body {
@@ -184,20 +196,26 @@ nav ul li a:hover {
         display: inline-block;
     }
 
-    .body1 .video{
+    .body1 .video {
         display: none;
 
     }
 
-    .body1 .body11{
+    .body1 .body11 {
         display: inline-block
     }
+
     .banner2{
         display:none !important;
     }
-    .footer .footer1{
-        display:inline-7;
+    .footer .footer1 {
+        display: inline-7;
     }
+    .last div{
+        display: grid;
+        grid-template-columns: repeat(2,2fr);
+    }
+
 }
 
 
@@ -253,6 +271,11 @@ nav ul li a:hover {
     background-color: rgb(36, 224, 164);
     border: none;
     border-radius: 34px;
+}
+
+#gotbtn a {
+    color: black;
+    text-decoration: none;
 }
 
 .one11 {
@@ -355,10 +378,14 @@ nav ul li a:hover {
 /* banner2 */
 .banner2 {
     margin-top: 80px;
-    height: 100vh;
+    height: 90vh;
     text-align: center;
     background-color: rgb(36, 224, 164);
     border: 2px solid rgb(36, 224, 164);
+}
+
+.banner2 img {
+    width: 70%;
 }
 
 .banner2 h1 {
@@ -419,7 +446,8 @@ nav ul li a:hover {
 .last .logolast img {
     width: 90%;
 }
-.last .logolast .privacy{
+
+.last .logolast .privacy {
     margin-top: 50px;
     /* border: 2px solid red; */
 
@@ -442,12 +470,12 @@ nav ul li a:hover {
 
 
 /* //footericon */
-.footer-iconTop{
-margin-left: 90%;
-background-color: rgb(36, 224, 164);
-margin-bottom: 20px;
-border: none;
-border-radius: 30px;
+.footer-iconTop {
+    margin-left: 90%;
+    background-color: rgb(36, 224, 164);
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
 
 }
 
@@ -455,5 +483,5 @@ border-radius: 30px;
     display: inline-flex;
     text-decoration: none;
     padding: 0.8rem;
-    
+
 }
