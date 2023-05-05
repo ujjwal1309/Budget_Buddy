@@ -40,7 +40,7 @@ const login = async (req, res) => {
 
     if (!isPassword) return res.send({ msg: "Password doesn't match" });
 
-    const token = jwt.sign({ userId: isUser._id }, process.env.PRIVATE_KEY);
+    const token = jwt.sign({ user: isUser.email }, process.env.PRIVATE_KEY);
 
     const refreshToken = jwt.sign(
       { userId: isUser._id },
@@ -48,6 +48,16 @@ const login = async (req, res) => {
     );
 
     res.send({ msg: "Successfully logged in", token, refreshToken });
+  } catch (error) {
+    res.send({ msg: "error", error: error.message });
+  }
+};
+
+const getUser = async (req, res) => {
+  try {
+    const email = req.user;
+    const user = await User.find({ email });
+    res.send(user);
   } catch (error) {
     res.send({ msg: "error", error: error.message });
   }
@@ -63,8 +73,8 @@ const logout = async (req, res) => {
 
     res.send({ msg: "Logout successful" });
   } catch (error) {
-    console.log({ msg: "error", error: error.message });
+    res.send({ msg: "error", error: error.message });
   }
 };
 
-module.exports = { signup, login, logout };
+module.exports = { signup, login, logout, getUser };

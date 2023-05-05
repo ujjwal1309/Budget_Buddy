@@ -15,7 +15,8 @@ const auth = async (req, res, next) => {
     if (!isValid) return res.send({ msg: "Please login again" });
 
     //set userId in req body
-    req.userId = isValid.userId;
+    req.user = isValid.user;
+    console.log(isValid)
     next();
   } catch (error) {
     res.send({ msg: "error", error: error.message });
