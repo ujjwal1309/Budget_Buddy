@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salary Input Form</title>
+	<link rel="stylesheet" href="./style/edit.css">
+	
+</head>
+<body>
+
+	<h1 style="color: green;">INCOME</h1>
+<div id="mainDivv">
+
+	<form id="salary-form">
+		<label for="income-option">Income From</label><br>
+		<select id="income-option" name="income-option">
+			<option value="<box-icon type='solid' name='briefcase-alt-2'></box-icon> Salary">Salary</option>
+			<option value="<box-icon name='laptop'></box-icon> Freelancing">Freelancing</option>
+			<option value="<box-icon type='logo' name='graphql'></box-icon> Investments">Investments</option>
+			<option value="<box-icon type='logo' name='graphql'></box-icon> Commissions">Commissions</option>
+			<option value="<box-icon name='candles' color='#a7e109' ></box-icon> Stocks">Stocks</option>
+			<option value="<box-icon name='youtube' type='logo' color='#e70101' ></box-icon> YouTube">YouTube</option>
+			<option value="<box-icon name='wallet' color='#69c050' ></box-icon>     Other">Other</option>
+		</select><br>
+
+		<!-- <label for="title">Salary Type</label><br>
+		<input type="text" id="title" name="title"><br> -->
+
+		<label for="amount">Amount</label><br>
+		<input type="number" id="amount" name="amount"><br>
+
+		<label for="date">Date</label><br>
+		<input type="date" id="date" name="date"><br>
+
+
+
+		<label for="comments">Add a Comment</label><br>
+		<textarea  id="comments" name="comments" rows="4" cols="50"></textarea><br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+
+	<div id="display-data"></div>
+</div>
+
+	<script>
+const form = document.querySelector('#salary-form');
+const displayData = document.querySelector('#display-data');
+const totalIncome = document.querySelector('#total-income');
+
+let incomeTotal = 0;
+
+form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+//   const title = document.querySelector('#title').value;
+  const amount = parseInt(document.querySelector('#amount').value);
+  const date = document.querySelector('#date').value;
+  const incomeOption = document.querySelector('#income-option').value;
+  const comments = document.querySelector('#comments').value;
+
+  incomeTotal += amount;
+  
+
+  const html = `
+  <div id ="datadiv">
+	 <b>${incomeOption}</b>  <b> <box-icon name='dollar' color='#222403' ></box-icon> ${amount}</b> <p><box-icon name='calendar'></box-icon> ${date}</p>
+    
+    
+    
+   
+    <p><box-icon name='chat' color='#222403' ></box-icon> ${comments}</p>
+	</div>
+  `;
+
+  displayData.innerHTML += html;
+  totalIncome.textContent = `Total Income: $${incomeTotal}`;
+  
+  form.reset();
+}
+
+
+		// const form = document.querySelector('#salary-form');
+		// const displayData = document.querySelector('#display-data');
+
+		// form.addEventListener('submit', handleSubmit);
+
+		// function handleSubmit(event) {
+		// 	event.preventDefault();
+
+		// 	const title = document.querySelector('#title').value;
+		// 	const amount = document.querySelector('#amount').value;
+		// 	const date = document.querySelector('#date').value;
+		// 	const incomeOption = document.querySelector('#income-option').value;
+		// 	const comments = document.querySelector('#comments').value;
+
+		// 	//  HTML to display submitted data
+		// 	const html = `
+		// 	<div id ="datadiv">
+		// 	<span><p><b>Salary Title:</b> ${title}</p>
+		// 		<p><strong>Salary Amount:</strong> ${amount}</p></span>
+		// 		<p><strong>Date:</strong> ${date}</p>
+		// 		<p><strong>Income from Options:</strong> ${incomeOption}</p>
+		// 		<p><strong>Comments:</strong> ${comments}</p>
+		// 		</div>
+		// 		`;
+
+		// 	// Display submitted data okk
+		// 	displayData.innerHTML = html;
+
+		// 	// Clear form input
+		// 	form.reset();
+		// }
+	</script>
+	<script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salary Input Form</title>
+    <link rel="stylesheet" href="./style/register.css" />
+  </head>
+  <body>
+    <h1 style="color: brown">Expenses</h1>
+    <div id="mainDivv">
+      <form id="salary-form">
+        <label for="income-option">Income From</label><br />
+        <select id="income-option" name="income-option">
+          <option value="<box-icon name='book-open'></box-icon> Education">
+            Education
+          </option>
+          <option
+            value="<box-icon name='bowl-rice' type='solid' color='#222403' ></box-icon> Groceries"
+          >
+            Groceries
+          </option>
+          <option
+            value="<box-icon name='plus-medical' color='#222403' ></box-icon> Health"
+          >
+            Health
+          </option>
+          <option
+            value="<box-icon name='tailwind-css' type='logo' color='#222403' ></box-icon> Subscriptions"
+          >
+            Subscriptions
+          </option>
+          <option value="<box-icon name='closet'></box-icon> Clothing">
+            Clothing
+          </option>
+          <option
+            value="<box-icon type='solid' name='plane-alt'></box-icon> Travelling"
+          >
+            Travelling
+          </option>
+          <option
+            value="<box-icon name='wallet' color='#69c050' ></box-icon>  Other"
+          >
+            Other
+          </option></select
+        ><br />
+
+        <!-- <label for="title">Salary Type</label><br>
+		<input type="text" id="title" name="title"><br> -->
+
+        <label for="amount">Amount</label><br />
+        <input type="number" id="amount" name="amount" /><br />
+
+        <label for="date">Date</label><br />
+        <input type="date" id="date" name="date" /><br />
+
+        <label for="comments">Add a Comment</label><br />
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea
+        ><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <div id="display-data"></div>
+    </div>
+
+    <script>
+      const expform = document.querySelector("#salary-form");
+      const expdisplayData = document.querySelector("#display-data");
+      const exptotalIncome = document.querySelector("#total-income");
+
+      let expTotal = 0;
+
+      expform.addEventListener("submit", exphandleSubmit);
+
+      function exphandleSubmit(event) {
+
+        event.preventDefault();
+
+        //   const title = document.querySelector('#title').value;
+        const expamount = document.querySelector("#amount").value;
+        const expdate = document.querySelector("#date").value;
+        const expOption = document.querySelector("#income-option").value;
+        const expcomments = document.querySelector("#comments").value;
+
+        expTotal += expamount;
+
+        const exphtml = `
+  <div id ="datadiv">
+	 <b>${expOption}</b>  <b> <box-icon name='dollar' color='#222403' ></box-icon> ${expamount}</b> <p><box-icon name='calendar'></box-icon> ${expdate}</p>
+
+    <p><box-icon name='chat' color='#222403' ></box-icon> ${expcomments}</p>
+	</div>
+  `;
+
+        expdisplayData.innerHTML += exphtml;
+        exptotalIncome.textContent = `Total Income: $${expTotal}`;
+
+        expform.reset();
+      }
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+  </body>
+</html>

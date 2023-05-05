@@ -4,7 +4,29 @@
     box-sizing: border-box;
 }
 
+#logo {
+    width: 250px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    margin-left: 15px;
+    cursor: pointer;
+}
 
+#navbar-signup {
+    background-color:#ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#navbar-signup a {
+    color: rgb(5, 94, 43);
+    text-decoration: none;
+    padding-top: 15px;
+    margin-top: 5%;
+    font-size: larger;
+}
 
 
 
@@ -63,6 +85,13 @@
     margin-bottom: 20px;
     margin-top: 10px;
 }
+#divForm{
+     
+     box-shadow: rgba(106, 213, 141, 0.4) -5px 5px, rgba(106, 213, 141, 0.4) -10px 10px, rgba(116, 198, 143, 0.4) -15px 15px, rgba(91, 167, 116, 0.4) -20px 20px, rgba(86, 183, 118, 0.4) -25px 25px;
+    padding: 0 30px;
+    
+
+}
 
 #divForm h2 {
     box-sizing: border-box;
@@ -95,6 +124,7 @@
     margin-top: 10px;
     font-weight: bolder;
     font-size: large;
+    cursor: pointer;
 }
 
 #LoginBtn:hover {
@@ -103,6 +133,7 @@
 
   #gmail{
     box-sizing: border-box;
+    cursor: pointer;
     margin: 0px;
     min-width: 0px;
     display: block;
@@ -121,11 +152,12 @@
 
   #fb{
     box-sizing: border-box;
+    cursor: pointer;
     margin: 0px;
     min-width: 0px;
     display: block;
     width: 100%;
-    background-color: #0823f1;
+    background-color: #eebc04;
     border-radius: 54px;
     padding: 10px;
     border: none;
@@ -163,10 +195,11 @@
     border: none;
     width: 500px;
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-top: 10px;
     font-weight: bolder;
     font-size: large;
+    cursor: pointer;
 
 }
 
@@ -199,3 +232,113 @@
  #banners>img:hover {
     transform: scale(1.050); 
  }  
+
+
+ /* footer  */
+
+ .footer {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.footer ul li {
+    padding: 10px;
+}
+
+/* /////last//////////////////////////////// */
+.heart-emoji {
+    font-size: 20px;
+    /* Change the size to your preference */
+    color: #808080;
+    /* Change the color to your preference */
+}
+
+.last {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+}
+
+.last .logolast img {
+    width: 90%;
+}
+.last .logolast .privacy{
+    margin-top: 50px;
+    /* border: 2px solid red; */
+
+}
+
+.last .app img {
+    width: 50%;
+}
+
+.btnlast div {
+    margin-top: 20px;
+    padding: 2px;
+    /* border: 2px solid red; */
+}
+
+/* /////end//////////////////////////////// */
+.icon1 {
+    margin-top: 20px;
+}
+
+
+/* //footericon */
+.footer-iconTop{
+margin-left: 90%;
+background-color: rgb(36, 224, 164);
+margin-bottom: 20px;
+border: none;
+border-radius: 30px;
+
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 0.8rem;
+    
+}
+
+#login {
+    color: black;
+    width: 9rem;
+    height: 7vh;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 34px;
+    background-color: white;
+}
+#login a{
+    text-decoration: none;
+}
+
+#login:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+#register {
+    width: 9rem;
+    height: 7vh;
+    cursor: pointer;
+    color: black;
+    background-color: rgb(36, 224, 164);
+    border: none;
+    border-radius: 34px;
+}
+

@@ -1,0 +1,91 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	
+    margin-left: 30px;
+}
+#mainDivv{
+    display: flex;
+}
+
+form {
+	height: 71vh;
+	max-width: 350px;
+	margin-left: 25px;
+	padding: 20px;
+	background-color: #cbece6;
+	border-radius: 5px;
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: none;
+	background-color: #7aecdd;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: none;
+	background-color: #e5e5e5;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	border: none;
+	background-color: #007bff;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #0062cc;
+}
+
+
+#datadiv{
+   
+	height: 150px;
+	width: 220px;
+	margin-left: 25px;
+	padding: 5px;
+	background-color: #ffffe6;
+	border-radius: 5px;
+
+
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+	 
+}
+
+#display-data{
+	display: grid;
+	grid-template-columns: repeat(4, 2fr); 
+
+}
