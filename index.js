@@ -4,10 +4,12 @@ const cors = require("cors");
 const path = require("path");
 const { connection } = require("./config/db");
 const jwt=require("jsonwebtoken");
-const { googleRouter } = require("./routes/google.route");
+const {googleRouter} = require("./routes/google.route");
 const {DataRouter} = require('./routes/data.route');
 const { userRouter } = require("./routes/user.routes");
 require("dotenv").config();
+
+const  {auth}= require("./middlewares/auth")
 
 const app = express();
 app.use(express.json());
@@ -16,13 +18,14 @@ app.set("views", __dirname + "/public");
 app.set("view engine", "ejs");
 app.use(express.static("./public"));
 
+
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
-app.use("/users",userRouter);
 app.use("/auth",googleRouter);
-app.use("/budget", DataRouter);
+app.use("/users",userRouter);
+app.use("/budget",auth, DataRouter);
 
 port = process.env.PORT || 4000;
 

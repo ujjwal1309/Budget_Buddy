@@ -4,33 +4,16 @@
     box-sizing: border-box;
 }
 
-#logo {
-    width: 160px;
-    height: 60px;
-    display: block;
-    margin: auto;
-}
 
-#navbar-signup {
-    background-color:#000033;
-    display: flex;
-    justify-content: space-between;
-}
 
-#navbar-signup a {
-    color: whitesmoke;
-    text-decoration: none;
-    padding-top: 15px;
-    margin-top: 5%;
-    font-size: larger;
-}
+
 
 /* all navbar items above  */
 
 #allContent {
     display: flex;
     justify-content: space-around;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 #L1 {
