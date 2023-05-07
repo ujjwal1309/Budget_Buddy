@@ -1,4 +1,4 @@
-fORM DATA CSS
+/* fORM DATA CSS */
 
 form {
 
@@ -43,3 +43,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: #18d159;
 }
+
+
+#recent_activity{
+
+}
+
+

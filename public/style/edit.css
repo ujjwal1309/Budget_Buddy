@@ -553,6 +553,53 @@ body {
 
 
 
+#titlee {
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 7px;
+	color: rgb(179, 237, 121);
+  }
+  
+  #categoryy {
+	font-size: 17px;
+	color: #2f3b3b;
+	margin-bottom: 7px;
+  }
+  
+  #datee, #amountt {
+	font-size: 15px;
+	margin-bottom: 7px;
+  }
+  
+  #updateBtn, #deleteBtn {
+	background-color: #428bca;
+	color: #fff;
+	border: none;
+	border-radius: 30px;
+	font-size: 13px;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-right: 10px;
+	margin-bottom: 11px;
+  }
+  
+  #updateBtn:hover, #deleteBtn:hover {
+	background-color: #3071a9;
+  }
+
+  #Datacard{
+	padding: 5px 20px;
+	border-radius: 29px;
+	margin-bottom: 10px;
+
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  
+
+
+
+
 @media only screen and (max-width: 600px) {
 	label {
 		display: block;

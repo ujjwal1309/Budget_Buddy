@@ -138,7 +138,7 @@
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
-					<div id="recent_activity"   style="border: 1px solid red;width: 100%; height: 100px;">
+					<div id="recent_activity" >
 
 <!-- recent asctivity will post over here -->
 
@@ -350,14 +350,16 @@ data.forEach(element => {
 	let date = element.date
 	let amount = element.amount
 	datacontainer.innerHTML += 	`
-						<h3 id="titlee">${title}</h3>
+	<div id = "Datacard">
+						<h3 id="titlee">Title:  ${title}</h3>
 						
-						<p id="categoryy">${category}</p>
+						<p id="categoryy">Category:  ${category}</p>
 						
-						<p id="datee">${date}</p>
-						<p id="amountt">${amount}</p>
+						<p id="datee">Date:  ${date.substring(0,10)}</p>
+						<p id="amountt">Amount:  ₹ ${amount}</p>
 						<button id="updateBtn">Update</button>
 						<button id="deleteBtn">Delete</button>
+						</div>
 	`
 });
 
