@@ -2,31 +2,38 @@ const mongoose = require("mongoose")
 
 const DataSchema = mongoose.Schema({
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'User',
+    required: true
+  },
+  title:{
+    type: String,
     required: true
   },
   type: {
     type: String,
-    enum: ['income', 'expense'],
+    enum: ['Income', 'Expense'],
     required: true
   },
   category: {
     type: String,
-    enum: ['food', 'housing', 'transportation', 'utilities', 'entertainment', 'education', 'healthcare', 'other'],
+    enum: ['Groceries', 'Housing', 'Travelling', 'Utilities', 'Entertainment','Clothing','Subscriptions', 'Education', 'Healthcare', 'Other','Salary','Freelancing','Investments','Commissions','Stock','Youtube'],
     required: true
   },
   amount: {
     type: Number,
     required: true
   },
-  note: {
+  comment: {
     type: String
   },
-  createdAt: {
+  date: {
     type: Date,
-    default: Date.now
+    default:Date.now,
+    required: true
   }
+    },{
+      timestamps: true
     })
     
     const DataModel = mongoose.model("data", DataSchema)
