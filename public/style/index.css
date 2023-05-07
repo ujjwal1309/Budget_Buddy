@@ -7,30 +7,22 @@
 
 /* navbar  */
 .navbar {
-    /* height: 100vh; */
     width: 100%;
+    box-sizing: border-box;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: auto;
     background: white;
+    display: flex;
+    justify-content: space-between;
     font-family: sans-serif;
     position: sticky;
     top: 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* position: sticky; */
-    /* border: 2px solid red; */
+    /* border: 2px solid red;  */
 }
 
-nav {
-    width: 95%;
-    margin: auto;
-    /* padding: 5px 0; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* position: sticky; */
-    top: 0;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    /* background: white; */
-    /* border: 2px solid red; */
-}
+
 
 .logo {
     width: 20rem;
@@ -38,92 +30,42 @@ nav {
     /* border: 2px solid red; */
 }
 
-nav ul li {
+#nav-menu {
+    display: flex;
+    /* border: 2px solid red; */
+    align-items: center;
+    margin-left: 22%;
+
+
+
+}
+
+#nav-menu ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    /* border: 2px solid red; */
+
 }
 
-nav ul li a {
+#nav-menu ul li a {
     text-decoration: none;
-    color: #ffffff;
-}
-
-nav ul li a:hover {
-    color: #ff4321;
-    /* border:2px solid red; */
-
-}
-
-#menu_list {
-    /* border: 1px solid red; */
-    width: 100%;
-    height: 30px;
-    margin-top: 2px;
-    display: flex;
-    justify-content: center;
-}
-
-#menu_list a:hover {
-    color: rgb(36, 224, 164);
-
-}
-
-#menu_list ul {
-    list-style: none;
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-#menu_list ul a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 32px;
-    padding: 0 15px;
+    color: #040404;
     font-weight: 500;
-    display: block;
 }
 
-#menu_list ul li {
-    float: left;
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-#menu_list ul li:hover {
+#nav-menu ul li a:hover {
     color: rgb(36, 224, 164);
-}
 
-#menu_list ul ul {
-    position: absolute;
-    background: white;
-    top: 100%;
-    left: 0;
-    display: none;
-}
-
-#menu_list ul ul li {
-    float: none;
-    width: 220px;
-}
-
-#menu_list ul ul li:hover {
-    border-left: 3px solid white;
-}
-
-#menu_list ul ul ul {
-    left: 100%;
-    top: 0;
 
 }
+#nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* border: 2px solid red; */
 
-#menu_list ul li:hover>ul {
-    display: block;
 }
-
 #login {
     color: black;
     width: 9rem;
@@ -135,13 +77,18 @@ nav ul li a:hover {
 
 #login a {
     text-decoration: none;
+    color: black;
+
 }
 
 #login:hover {
     cursor: pointer;
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(36, 224, 164);
+    border: none;
 }
+
+
 
 #register {
     width: 9rem;
@@ -159,14 +106,6 @@ nav ul li a:hover {
 }
 
 @media(max-width:900px) {
-
-    .max-width {
-        padding: 0 50px;
-    }
-
-    .navbar #menu_list {
-        display: none;
-    }
 
     .one .one1 {
         display: inline-block;
@@ -390,15 +329,16 @@ nav ul li a:hover {
     width: 100%;
 }
 
-.banner2 h1  {
+.banner2 h1 {
     margin-top: 5vh;
     text-align: center;
     /* border: 2px solid red; */
 }
-.banner2 p{
+
+.banner2 p {
     text-align: center;
 
-} 
+}
 
 .body1111 {
     text-align: center;
@@ -499,6 +439,7 @@ nav ul li a:hover {
     margin-top: 20px;
     /* border: 2px solid red; */
 }
+
 .animationone img {
     width: 80%
 }
@@ -506,7 +447,7 @@ nav ul li a:hover {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 .wrapper .outer {
-    margin-top:150px;
+    margin-top: 150px;
     width: 30%;
     display: flex;
     align-items: center;
