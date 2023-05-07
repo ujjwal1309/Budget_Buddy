@@ -553,6 +553,25 @@ body {
 
 
 
+@media only screen and (max-width: 600px) {
+	label {
+		display: block;
+		width: 100%;
+	}
+	input, select, textarea {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
 		display: none;

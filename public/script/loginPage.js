@@ -28,17 +28,18 @@ loginForm
 console.log(data);
 
 //setting data in local storage
-
 localStorage.setItem("token", JSON.stringify(data.token))
 localStorage.setItem("refresh", JSON.stringify(data.refreshToken))
+
+
+if(data.token=== undefined){
+  alert("Invalid Credentials")
+}else{
+  // console.log("78964")
+ window.location.href = "admin.html";
+}
+
   });
-
-
-
-
-
-
-
 
 // to merge HOMEPAGE
 // window.location.href= "hp.html"
