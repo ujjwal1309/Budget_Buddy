@@ -10,6 +10,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- CSS FILE -->
     <link rel="stylesheet" href="./style/edit.css" />
+
+	<link rel="stylesheet" href="./style/formdata.css">
 </head>
 
 <body>
@@ -108,14 +110,14 @@
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_profit">$1020</h3>
+						<h3 id="total_profit"></h3>
 						<p>Total Profit</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_income">$2834</h3>
+						<h3 id="total_income"></h3>
 						<p>Total Income</p>
 					</span>
 				</li>
@@ -139,42 +141,49 @@
 					<div id="recent_activity"   style="border: 1px solid red;width: 100%; height: 100px;">
 
 <!-- recent asctivity will post over here -->
+
+
 <!-- <h1>only income data will apeend over here by date / amount / purpose , you can use filter functinality over here asc and dsc and by date by purpose</h1> -->
 
 					</div>
 				</div>
 				<div class="todo">
 					<div class="head">
-						<h3>Add Icome Details</h3>
+						<h3>Add Income Details</h3>
 						<i class='bx bx-plus' ></i>
 						<i class='bx bx-filter' ></i>
             
 					</div>
 					<form id="salary-form">
-						<label for="income-option">Income From</label><br>
+
+						<label for="title">Title</label>
+						<input type="text" id="title" name="title" /><br />
+
+						<label for="income-option">Income From</label>
 						<select id="income-option" name="income-option">
-							<option value="<box-icon type='solid' name='briefcase-alt-2'></box-icon> Salary">Salary</option>
-							<option value="<box-icon name='laptop'></box-icon> Freelancing">Freelancing</option>
-							<option value="<box-icon type='logo' name='graphql'></box-icon> Investments">Investments</option>
-							<option value="<box-icon type='logo' name='graphql'></box-icon> Commissions">Commissions</option>
-							<option value="<box-icon name='candles' color='#a7e109' ></box-icon> Stocks">Stocks</option>
-							<option value="<box-icon name='youtube' type='logo' color='#e70101' ></box-icon> YouTube">YouTube</option>
-							<option value="<box-icon name='wallet' color='#69c050' ></box-icon>     Other">Other</option>
+							<option value="Salary">Salary</option>
+							<option value="Freelancing">Freelancing</option>
+							<option value="Investments">Investments</option>
+							<option value="Commissions">Commissions</option>
+							<option value="Stocks">Stocks</option>
+							<option value="YouTube">YouTube</option>
+							<option value="Other">Other</option>
 						</select><br>
 				
 						<!-- <label for="title">Salary Type</label><br>
 						<input type="text" id="title" name="title"><br> -->
 				
-						<label for="amount">Amount</label><br>
+						<label for="amount">Amount</label>
 						<input type="number" id="amount" name="amount"><br>
 				
-						<label for="date">Date</label><br>
+						<label for="date">Date</label>
 						<input type="date" id="date" name="date"><br>
 				
 				
 				
-						<label for="comments">Add a Comment</label><br>
-						<textarea  id="comments" name="comments" rows="4" cols="50"></textarea><br>
+						<label for="comments">Comment</label>
+						<!-- <textarea  id="comments" name="comments" rows="4" cols="50"></textarea><br> -->
+						<input type="text" id="comments" name="comments"><br>
 				
 						<input type="submit" value="Submit">
 					</form>
@@ -193,251 +202,177 @@
     
 </body>
     <script>
-       let displaydata=JSON.parse(localStorage.getItem("product"))||[];
-       console.log(displaydata)
-       //add products to json
-let dispmain=document.querySelector(".main")
-let mainSection = document.getElementById("data-list-wrapper");
-let proIdInput = document.getElementById("Product-id");
-let proNameInput = document.getElementById("Product-image");
-let proDesInput = document.getElementById("Product-des");
-let proPriceInput = document.getElementById("Product-price");
-let proCatInput = document.getElementById("Product-cat");
-let proGenInput = document.getElementById("Product-Gender");
-let proAgeInput = document.getElementById("Product-Age");
-let proUseInput = document.getElementById("Product-uses");
-let proFormInput = document.getElementById("Product-form");
-let proImgInput = document.getElementById("Product-image");
-let proBtn= document.getElementById("add-Product");
-
-// let productsData =[];  //employeesdata to productsdata
-
-// ***** Event listeners ***** //
-
-//step-1, Display list of employees on page load
-//step-1 at 
-window.addEventListener("load", () => {
-  fetchAndRenderProduct();    //for step-1
-});
-
-function fetchAndRenderProduct(){   //for step-1
-  fetch(`http://127.0.0.1:9090/employees`)
-  .then((res)=>res.json())
-  .then((data)=>{
-    console.log(data);
-    productsData=data;
-    // renderCardList(displaydata);  // (for step-1)
-    
-  })
-}
-
-proBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let id= proIdInput.value;
-  let name= proNameInput.value;
-  let img= proImgInput.value;
-  let des= proDesInput.value;
-  let price= proPriceInput.value;
-  let cat= proCatInput.value;
-  let gender= proGenInput.value;
-  let age= proAgeInput.value;
-  let use= proUseInput.value;
-  let form= proFormInput.value;
-  console.log("2");
-  
-  addProduct(id,name,img,des,price,cat,gender,age,use,form);
-  alert("Product added");
-  fetchAndRenderProduct();
-});
-
-function addProduct(id,name,img,des,price,cat,gender,age,use,form)
-{
-  fetch(`http://127.0.0.1:9090/employees`,{
-    method: 'POST',
-  body:JSON.stringify({
-    product_Id:id,
-    name:name,
-    product_description:des,
-    price:price,
-    category:cat,
-    gender:gender,
-    age:age,
-    uses:use,
-    product_form:form,
-    image:img
-  }),
-  headers:{
-    "content-type":"application/json" 
-  }
-  })
-}
-
-function renderCardList(cardData) {
-    
-    for(let item in cardData)
-    {
-        dispmain.innerHTML="";
-        let card = document.createElement("div");
-			card.classList.add("card");
-            let card1= document.createElement("div");
-			card1.classList.add("card1");
-			let card2= document.createElement("div");
-			card2.classList.add("card2");
-
-            let img= document.createElement("img");
-            img.src=cardData["image"];
-
-            let proid= document.createElement("h3");
-            proid.innerText=cardData["product_Id"];
-
-            let name= document.createElement("h3");
-            name.innerText=cardData["name"];
-
-            let price= document.createElement("p");
-            price.innerText=`₹ ${cardData["price"]}`;
-
-            let cat= document.createElement("p");
-            cat.innerText=cardData["category"];
-
-            card1.append(img);
-            card2.append(proid,name,price,cat);
-			card.append(card1,card2);
-            dispmain.append(card);
-    }
-
-  mainSection.innerHTML = cardList;
-}
-
-// function getCard(id, name, desc, price, img) {    //for step-1
-//   let card = `
-//       <div class="card" data-id=${id} >
-//         <div class="card__img">
-//         <img src=${img} alt="product image"/>
-//         </div>
-//         <div class="card__body">
-//           <h3 class="card__item card__title">${id}</h3>
-//           <h3 class="card__item card__title">${name}</h3>
-//           <h3 class="card__item_dep">${desc}</h3>
-//           <h3 class="card__item_salary">${price}</h3>
-//           </div>
-//           <a href="" data-id=${id} class="card__item card__link">Edit</a>
-//         </div>
-//       </div>
-//   `;
-//   return card;
-// }
 
 
-//update data
-
-let updateproIdInput = document.getElementById("update-product-id");
-let updateproNameInput = document.getElementById("update-product-name");
-let updateproImageInput = document.getElementById("update-product-image");
-let updateproCatInput = document.getElementById("update-product-cat");
-let updateproPriceInput = document.getElementById("update-product-price");
-let updateproUpdateBtn = document.getElementById("update-product");
- 
-//update price 
-let updateScoreproId = document.getElementById("update-score-product-id");
-let updateScoreproSalary = document.getElementById(
-  "update-score-product-salary"
-);
-let updateScoreproSalaryButton = document.getElementById(
-  "update-score-product"
-);
 
 
-//updtae data
 
-updateproUpdateBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  let id=updateproIdInput.value;
-let name=updateproNameInput.value;
-let image= updateproImageInput.value;
-let cat= updateproCatInput.value;
-let price= updateproPriceInput.value;
-console.log(id,name,image,cat,price);
-  updateproducts(id,name,image,cat,price);
-  alert("Product details updated");
-  fetchAndRenderProduct(); 
-});
 
-function updateproducts(product_Id,name,image,cat,price) {
-    // console.log(id)
- fetch(`http://127.0.0.1:9090/employees/${product_Id}`,{
-    method: 'PUT',
-    body: JSON.stringify({
-     
-      name:name,
-      image:image,
-    category:cat,
-    price:price,
-    
-    }),
+//Income DaTA
+
+let formData = document.getElementById("salary-form");
+let title = document.getElementById("title");
+let amount = document.getElementById("amount");
+let date = document.getElementById("date");
+let category = document.getElementById("income-option");
+let comments = document.getElementById("comments");
+
+formData.addEventListener('submit', async(e)=>{
+e.preventDefault();
+
+// console.log("hjdsbhjf");
+
+
+//sending the data
+const res =  await fetch("http://localhost:4000/budget/adddata", {
+    method: "POST",
     headers: {
-      "content-type":"application/json"
-    }
-  })
+	      "Content-Type": "application/json",
+		  "authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+    },
+    body: JSON.stringify({
+      title: title.value,
+   
+       type :"Income",
+	   category :category.value,
+      amount: amount.value,
+	  date: date.value,
+      comment: comments.value
+	   
+    }),
+  });
+
+let data = await res.json()
+console.log(data);
+window.location.reload()
+})
+
+
+
+//appending Income Data On the page
+
+// recent_activity    ->div id
+
+// /allincome',AllIncome     ->ROUTE
+
+// const displayData =  await fetch("http://localhost:4000/allincome", {
+//     method: "GET",
+//     headers: {
+// 	      "Content-Type": "application/json",
+// 		  "authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+//     },
+//     body: JSON.stringify({
+//       title: title.value,
+   
+//        type :"Income",
+// 	   category :category.value,
+//       amount: amount.value,
+// 	  date: date.value,
+//       comment: comments.value
+	   
+//     }),
+//   });
+// let data = await res.json()
+// console.log(data);
+
+
+
+//appending t income data
+
+let datacontainer = document.getElementById("recent_activity")
+let AllIncome = document.getElementById("total_income");
+let AllExpense = document.getElementById("total_expense");
+let Profit =  document.getElementById("total_profit");
+
+
+//appending form data
+
+window.onload = async()=>{
+	let res = await fetch("http://localhost:4000/budget/allincome" ,{
+		headers :  {
+			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+		}
+
+	})
+	let formData = await res.json()
+console.log(formData);
+
+appendData(formData)
+
+let res2 = await fetch("http://localhost:4000/budget/totalincome" ,{
+		headers :  {
+			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+		}
+
+	})
+let totalIncome = await res2.json();
+console.log(totalIncome)
+
+AllIncome.innerText = "₹ "  + totalIncome.TotalIncome
+
+
+
+let res3 = await fetch("http://localhost:4000/budget/totalexpense" ,{
+		headers :  {
+			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+		}
+
+	})
+let totalExpense = await res3.json();
+console.log(totalExpense)
+
+AllExpense.innerText = "₹ "  + totalExpense.TotalExpense
+
+
+
+
+let res4 = await fetch("http://localhost:4000/budget/totalprofit" ,{
+		headers :  {
+			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+		}
+
+	})
+let totalProfit = await res4.json();
+console.log(totalProfit)
+
+Profit.innerText = "₹ "  + totalProfit.totalProfit
+
+
+
 }
 
-//update salary
-updateScoreproSalaryButton.addEventListener("click", function () {
-  let id=updateScoreproId.value;
-  let salary_updated= updateScoreproSalary.value;
-  updatesalary(id,salary_updated);
-  alert("salary updated");
-  fetchAndRenderProduct();
+function appendData(data){
+
+data.forEach(element => {
+	// datacontainer
+	let title = element.title;
+	let category = element.category
+	let date = element.date
+	let amount = element.amount
+	datacontainer.innerHTML += 	`
+						<h3 id="titlee">${title}</h3>
+						
+						<p id="categoryy">${category}</p>
+						
+						<p id="datee">${date}</p>
+						<p id="amountt">${amount}</p>
+						<button id="updateBtn">Update</button>
+						<button id="deleteBtn">Delete</button>
+	`
 });
 
-function updatesalary(id,salary_updated){
-  fetch(`http://127.0.0.1:9090/employees/${id}`,{
-    method: "PATCH",
-    body: JSON.stringify({
-        
-      price:salary_updated,
-    }),
-    headers:{
-      "content-type":"application/json" 
-    }
-  })
 }
 
 
 
-//form and form data js
+// appending total Income
 
-const form = document.querySelector('#salary-form');
-const displayData = document.querySelector('#recent_activity');
-const totalIncome = document.querySelector('#total-income');
 
-let incomeTotal = 0;
 
-form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
-  event.preventDefault();
 
-//   const title = document.querySelector('#title').value;
-  const amount = document.querySelector('#amount').value;
-  const date = document.querySelector('#date').value;
-  const incomeOption = document.querySelector('#income-option').value;
-  const comments = document.querySelector('#comments').value;
 
-  incomeTotal += amount;
-  
 
-  const html = `
-  <div id ="datadiv">
-	 <b>${incomeOption}</b>  <b> <box-icon name='dollar' color='#222403' ></box-icon> ${amount}</b> <p><box-icon name='calendar'></box-icon> ${date}</p>
-     <p><box-icon name='chat' color='#222403' ></box-icon> ${comments}</p>
-	 </div>
-  `;
-
-  displayData.innerHTML = html;
-  totalIncome.textContent = `Total Income: $${incomeTotal}`;
-  console.log(html)
-  form.reset();
-}
     </script>
 </html>
     
