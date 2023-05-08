@@ -210,7 +210,13 @@
 							<input type="text" id="comments" name="comments"><br>
 						
 				
-						<input id="submitBtn" type="submit" value="Submit" />
+						<input id="submitBtn" style="	background-color: #4bcb87;
+						color: white;
+						cursor: pointer;
+						width: 150px;
+						height: 40px;
+						margin-left: 100px;
+						border-radius: 50px;" class="submitBtn" type="submit" value="Submit" />
 					  </form>
 				  </div>
 			  </div>
@@ -278,7 +284,7 @@ let data = await res.json()
 console.log(data);
 
 
-
+window.location.reload();
 
 
 
@@ -362,13 +368,42 @@ data.forEach(element => {
 						<p id="datee">Date:  ${date.substring(0,10)}</p>
 						<p id="amountt">Amount:  ₹ ${amount}</p>
 						<button id="updateBtn">Update</button>
-						<button id="deleteBtn">Delete</button>
+						<button onclick = "deleteRestaurant("${element._id}")"  id="${element._id}" class="deleteBtn">Delete</button>
 						</div>
 	`
+// console.log(element._id)
+
+
 });
 
-}
 
+}
+let deleteBTN = document.querySelectorAll(".deleteBtn")
+console.log(deleteBTN)
+
+// function deleteData(id){
+// 	console.log(id)
+
+
+// }
+const deleteRestaurant = (id) => {
+console.log(id)
+// fetch(`http://localhost:4000/budget/totalexpense/${id}`,{
+// 	method : "DELETE",
+// 	headers : {
+// 		"Content-Type" : "application/json"
+// 	}
+// }).then((res)=>{
+// 	console.log(res)
+// })
+
+//     axios({
+//       url: `${process.env.REACT_APP_URL}/restaurants/${id}`,
+//       method: "delete",
+//     }).then(() => {
+//       fetchAndUpdateData(page, sortOrder,filterby);
+//     });
+  };
 
 
 
