@@ -142,11 +142,11 @@
     
 </body>
 <script>
-    let main1= document.querySelector(".main-container");
-	const paginationDiv = document.getElementById("pagination-wrapper");
+    // let main1= document.querySelector(".main-container");
+	// const paginationDiv = document.getElementById("pagination-wrapper");
 	
-    let sortlh= document.getElementById("sort-low-to-high");
-	let sorthl= document.getElementById("sort-high-to-low");
+    // let sortlh= document.getElementById("sort-low-to-high");
+	// let sorthl= document.getElementById("sort-high-to-low");
 
     // fetch("http://127.0.0.1:9090/employees")
     // .then((res)=>{
@@ -159,66 +159,66 @@
     // .catch((err)=>{
     //     console.log(err);
     // });
-	fetchData()
+	// fetchData()
 
-	let productsArr = [];
-	async function fetchData(pgNumber){
-		try {
-			let res = await fetch(`http://127.0.0.1:9090/employees?_limit=10&_page=${pgNumber}`)
-			let data = await res.json()
-			let obj = data.map((el)=>({
-				img: el.image,
-				id: el.product_Id,
-				name: el.name,
-				price: el.price,
-				category: el.category,
-				productF: el.product_form,
-				btn: "EDIT"
-			}));
+	// let productsArr = [];
+	// async function fetchData(pgNumber){
+	// 	try {
+	// 		let res = await fetch(`http://127.0.0.1:9090/employees?_limit=10&_page=${pgNumber}`)
+	// 		let data = await res.json()
+	// 		let obj = data.map((el)=>({
+	// 			img: el.image,
+	// 			id: el.product_Id,
+	// 			name: el.name,
+	// 			price: el.price,
+	// 			category: el.category,
+	// 			productF: el.product_form,
+	// 			btn: "EDIT"
+	// 		}));
 			
-			let T_Users = res.headers.get("X-Total-Count");
-			paginationBtns(T_Users,10);
-			productsArr = data;
-			renderCardList(productsArr)
-		} catch (error) {
-			console.log(error);
-		}
-	}
+	// 		let T_Users = res.headers.get("X-Total-Count");
+	// 		paginationBtns(T_Users,10);
+	// 		productsArr = data;
+	// 		renderCardList(productsArr)
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// }
     
-	function paginationBtns(total_item,limit){
-	let total_page = Math.ceil(total_item/limit);
-  	let btn_arr = [];
-  	for(let i=1;i<=total_page;i++){
-    btn_arr.push(`<button class="pagination_btn" data-page-number='${i}'>${i}</button>`);
-  	}
+// 	function paginationBtns(total_item,limit){
+// 	let total_page = Math.ceil(total_item/limit);
+//   	let btn_arr = [];
+//   	for(let i=1;i<=total_page;i++){
+//     btn_arr.push(`<button class="pagination_btn" data-page-number='${i}'>${i}</button>`);
+//   	}
 
-  paginationDiv.innerHTML = btn_arr.join("");
+//   paginationDiv.innerHTML = btn_arr.join("");
 
-  const all_btns = document.querySelectorAll(".pagination_btn");
+//   const all_btns = document.querySelectorAll(".pagination_btn");
 
-  for(let btn of all_btns){
-    btn.addEventListener("click",(e)=>{
-		let pageNumber = e.target.dataset['pageNumber'];
-		fetchData(pageNumber);
-		})
-	}
-}
+//   for(let btn of all_btns){
+//     btn.addEventListener("click",(e)=>{
+// 		let pageNumber = e.target.dataset['pageNumber'];
+// 		fetchData(pageNumber);
+// 		})
+// 	}
+// }
 
 //sort low to high
-sortlh.addEventListener("click",()=>{
-	let sortdata= productsArr.sort((a,b)=>{
-		return a.price - b.price
-	})
-	renderCardList(sortdata)
-})
+// sortlh.addEventListener("click",()=>{
+// 	let sortdata= productsArr.sort((a,b)=>{
+// 		return a.price - b.price
+// 	})
+// 	renderCardList(sortdata)
+// })
 
 //sort high to low
-sorthl.addEventListener("click",()=>{
-	let sortdata= productsArr.sort((a,b)=>{
-		return b.price - a.price
-	})
-	renderCardList(sortdata)
-})
+// sorthl.addEventListener("click",()=>{
+// 	let sortdata= productsArr.sort((a,b)=>{
+// 		return b.price - a.price
+// 	})
+// 	renderCardList(sortdata)
+// })
 
     // function fetchandrender(data)
     // {
@@ -274,50 +274,50 @@ sorthl.addEventListener("click",()=>{
     //     });
     // }
 
-	function renderCardList(cardData) {
-      let cardList = `
-    <div class="card-list">
-      ${cardData
-          .map((item) =>
-            getCard(
+// 	function renderCardList(cardData) {
+//       let cardList = `
+//     <div class="card-list">
+//       ${cardData
+//           .map((item) =>
+//             getCard(
               
-              item.product_Id,
-              item.name,
-              item.price,
+//               item.product_Id,
+//               item.name,
+//               item.price,
 			  
 			  
-			  item.image,
-              item.category,
-              item.product_form,
+// 			  item.image,
+//               item.category,
+//               item.product_form,
 			  
 
-            )
-          )
-          .join("")}
-    </div>
-  `;
+//             )
+//           )
+//           .join("")}
+//     </div>
+//   `;
 
-  	main1.innerHTML = cardList;
+//   	main1.innerHTML = cardList;
       
-	}
+// 	}
 
-	function getCard(id, name, price, imageUrl,cat,pro) {
-      let card = `
-      <div class="card" data-id=${id} >
-        <div class="card__img">
-        <img src=${imageUrl} alt="food" />
-        </div>
-        <div class="card__body">
-			<h3 class="card_item card_title">${id}</h3>
-          <h3 class="card_item card_title">${name}</h3>
-          <div class="card_item card_description">
-			₹ ${price}
-          </div>
-          <a href="edit.html" data-id=${id} class="card_item card_link">EDIT</a>
-        </div>
-      </div>
-  `;
-      return card;
-	}
+// 	function getCard(id, name, price, imageUrl,cat,pro) {
+//       let card = `
+//       <div class="card" data-id=${id} >
+//         <div class="card__img">
+//         <img src=${imageUrl} alt="food" />
+//         </div>
+//         <div class="card__body">
+// 			<h3 class="card_item card_title">${id}</h3>
+//           <h3 class="card_item card_title">${name}</h3>
+//           <div class="card_item card_description">
+// 			₹ ${price}
+//           </div>
+//           <a href="edit.html" data-id=${id} class="card_item card_link">EDIT</a>
+//         </div>
+//       </div>
+//   `;
+//       return card;
+// 	}
     </script>
     </html>
