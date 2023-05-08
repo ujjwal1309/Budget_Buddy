@@ -1,6 +1,6 @@
 /* fORM DATA CSS */
 
-form {
+#recent_activity>form {
 
 
 	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
@@ -18,11 +18,12 @@ label {
 	font-weight: bold;
 	margin-bottom: 10px;
 }
+
 #comments{
 	display:inline;
 }
 
-  input, select {
+/* #recent_activity> form input, select {
 	display: inline-block;
 	padding: 8px;
 	border-radius: 5px;
@@ -30,7 +31,7 @@ label {
 	margin-bottom: 20px;
 	box-sizing: border-box;
 	font-size: 16px;
-}
+} */
 
 input[type="submit"] {
 	background-color: #4bcb87;
@@ -44,9 +45,9 @@ input[type="submit"]:hover {
 	background-color: #18d159;
 }
 
-
+/* 
 #recent_activity{
 
 }
-
+ */
 
