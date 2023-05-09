@@ -1,6 +1,6 @@
 /* fORM DATA CSS */
 
-form {
+#salary-form {
 
 
 	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
@@ -18,11 +18,12 @@ label {
 	font-weight: bold;
 	margin-bottom: 10px;
 }
+
 #comments{
 	display:inline;
 }
 
-  input, select {
+#title, #income-option, #amount, #date, #comments{
 	display: inline-block;
 	padding: 8px;
 	border-radius: 5px;
@@ -30,21 +31,21 @@ label {
 	margin-bottom: 20px;
 	box-sizing: border-box;
 	font-size: 16px;
-}
+} 
 
-input[type="submit"] {
+/* .submitBtn {
 	background-color: #4bcb87;
 	color: white;
 	cursor: pointer;
 	width: 250px;
 	margin-left: 30px;
-}
+} */
 
-input[type="submit"]:hover {
+.submitBtn:hover {
+	
+
+	
 	background-color: #18d159;
 }
-
-
-
 
 
