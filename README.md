@@ -1,31 +1,33 @@
-# raspy-recess-4206
+<h1>BudgetBuddy Project</h1>
 
-npm i express mongoose bcrypt cors jsonwebtoken dotenv ioredis winston winston-mongodb nodemon passport passport-azure-ad-oauth2  passport-google-oauth20 passport-microsoft 
-
-
-
-edu =<box-icon name='book-open'></box-icon> 
-groc = <box-icon name='bowl-rice' type='solid' color='#222403' ></box-icon> 
-+ =<box-icon name='plus-medical' color='#222403' ></box-icon> 
-subs = <box-icon name='tailwind-css' type='logo' color='#222403' ></box-icon> 
-kapra = "<box-icon name='closet'></box-icon> 
-
-trav = <box-icon type='solid' name='plane-alt'></box-icon> 
-
-otHer= <box-icon name='wallet' color='#69c050' ></box-icon> 
+<img src="./public/images/projectnxm201logo.png" alt="Logo">
 
 
+<h2>Overview</h2>
 
-income
+<p>This project is designed to help you track your finances using the BudgetBuddy budgeting app. The app allows you to link your bank accounts and credit cards, and then automatically categorizes your transactions so you can see where your money is going. You can also create a budget, set financial goals, and get alerts when you're about to overspend.</p>
 
-salary <box-icon type='solid' name='briefcase-alt-2'></box-icon> 
-free = <box-icon name='laptop'></box-icon> 
+<h2>Getting Started</h2>
 
-inv = <box-icon type='logo' name='graphql'></box-icon> 
+<p>To use the BudgetBuddy app, you'll need to create an account on the BudgetBuddy website or download the mobile app from the App Store or Google Play. Once you've created an account, you can link your bank accounts and credit cards to the app, and then start tracking your finances.</p>
 
+<h2>Features</h2>
 
-comm = <box-icon type='logo' name='graphql'></box-icon>
+<p>Some of the key features of the BudgetBuddy app include:</p>
 
-stocks =<box-icon name='candles' color='#a7e109' ></box-icon> 
-Youtube = <box-icon name='youtube' type='logo' color='#e70101' ></box-icon> 
-other = <box-icon name='wallet' color='#69c050' ></box-icon>     
+<ul>
+  <li>SignUp or Login: The app uses Oauth or normal login or sign up which means you can either login with google or microsoft or you can simply create your account with email.</li>
+  <li>Automatic transaction categorization: The app uses machine learning to automatically categorize your transactions, so you don't have to manually enter them.</li>
+  <li>Budget tracking: You can create a budget and track your progress towards your financial goals.</li>
+  <li>Bill tracking: The app can track your bills and alert you when they're due, so you never miss a payment.</li>
+  <li>Smart savings: The app can analyze your spending patterns and suggest ways to save money.</li>
+  <li>Customizable alerts: You can set up custom alerts to let you know when you're about to overspend or when you've reached a savings goal.</li>
+</ul>
+
+<h2>Contributing</h2>
+
+<p>If you would like to contribute to this project, feel free to fork the repository and submit a pull request. We welcome contributions of all kinds, including bug fixes, feature enhancements, and documentation improvements.</p>
+
+<h2>Support</h2>
+
+<p>If you have any questions or issues with the BudgetBuddy app, you can contact BudgetBuddy support by email or through the app itself. You can also check out the BudgetBuddy Help Center for answers to frequently asked questions.</p>
