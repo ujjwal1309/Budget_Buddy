@@ -120,21 +120,21 @@
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_profit">$1020</h3>
+						<h3 id="total_profit">00.00</h3>
 						<p>Total Profit</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_income">$2834</h3>
+						<h3 id="total_income">00.00</h3>
 						<p>Total Income</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_expense">$2543</h3>
+						<h3 id="total_expense">00.00</h3>
 						<p>Total Expense</p>
 					</span>
 				</li>
@@ -148,12 +148,9 @@
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
-					<div id="recent_activity" style="border: 1px solid red;width: 100%; height: 100px;">
+					<!-- <div id="recent_activity" style="border: 1px solid red;width: 100%; height: 100px;">
 
-<!-- recent asctivity will post over here -->
-<h1>recent Activity from public/admin.html /line no. 151   append here </h1>
-
-					</div>
+					</div> -->
 				</div>
 				<div class="todo">
 					<div class="head">
@@ -161,7 +158,7 @@
 						<i class='bx bx-plus' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
-					<ul class="todo-list">
+					<!-- <ul class="todo-list">
 						<li class="not-completed">
 							<p>add purpose</p>
 							<p>$500</p>
@@ -173,13 +170,11 @@
 							<p>$500</p>
 							<i class='bx bx-dots-vertical-rounded' ></i>
 						</li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 
-			<div id="graph" style="border: 1px solid red;">
-				<h1>graph add here admin.html  line no 181</h1>
-			</div>
+			
 		</main>
 		<!-- MAIN -->
 	</section>
@@ -187,7 +182,19 @@
 
    
 </body>
+
 	<script>
+		const switchMode = document.getElementById('switch-mode');
+
+switchMode.addEventListener('change', function () {
+	if(this.checked) {
+		document.body.classList.add('dark');
+	} else {
+		document.body.classList.remove('dark');
+	}
+})
+
+
 		const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 allSideMenu.forEach(item=> {
@@ -256,15 +263,7 @@ window.addEventListener('resize', function () {
 
 
 
-		const switchMode = document.getElementById('switch-mode');
 
-switchMode.addEventListener('change', function () {
-	if(this.checked) {
-		document.body.classList.add('dark');
-	} else {
-		document.body.classList.remove('dark');
-	}
-})
 
 let table = document.getElementById("usertbody");
     // let a = 1;

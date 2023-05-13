@@ -22,7 +22,7 @@
         </a>
         <ul class="side-menu top">
             <li class="active">
-                <a href="/public/admin.html">
+                <a href="admin.html">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
@@ -98,21 +98,21 @@
                 <li>
                     <i class='bx bxs-dollar-circle'></i>
                     <span class="text">
-                        <h3 id="total_profit">$1020</h3>
+                        <h3 id="total_profit">00.00</h3>
                         <p>Total Profit</p>
                     </span>
                 </li>
                 <li>
                     <i class='bx bxs-dollar-circle'></i>
                     <span class="text">
-                        <h3 id="total_income">$2834</h3>
+                        <h3 id="total_income">00.00</h3>
                         <p>Total Income</p>
                     </span>
                 </li>
                 <li>
                     <i class='bx bxs-dollar-circle'></i>
                     <span class="text">
-                        <h3 id="total_expense">$2543</h3>
+                        <h3 id="total_expense">00.00</h3>
                         <p>Total Expense</p>
                     </span>
                 </li>
@@ -124,13 +124,46 @@
                     <div class="head">
                         <h3>Transactions Report</h3>
                         <i class='bx bx-search'></i>
-                        <select id="monthlySelect">
+                        <select id="bymonth">
+                            <option value="all">All</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
-                            <!-- Add more options for other months as needed -->
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
                           </select>
-                          <i id="filterIcon" class='bx bx-filter'></i>
+                          <i id="bycat" class='bx bx-filter'></i>
+                          <select id="bytype">
+                            <option value="all">All</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                          </select>
+                          <select id="bycategory">
+                            <option value="all">All</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Travelling">Travelling</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Subscriptions">Subscriptions</option>
+                            <option value="Education">Education</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Other">Other</option>
+                            <option value="Salary">Salary</option>
+                            <option value="Investments">Investments</option>
+                            <option value="Commissions">Commissions</option>
+                            <option value="Stock">Stock</option>
+                            <option value="Youtube">Youtube</option>
+                          </select>
+                          
                     </div>
                     <div id="recent_activity">
 
@@ -149,12 +182,28 @@
 
 
 </body>
-<script>let datacontainer = document.getElementById("recent_activity")
+<script>
+
+const switchMode = document.getElementById('switch-mode');
+
+switchMode.addEventListener('change', function () {
+	if(this.checked) {
+		document.body.classList.add('dark');
+	} else {
+		document.body.classList.remove('dark');
+	}
+})
+
+let AllIncome = document.getElementById("total_income");
+	let AllExpense = document.getElementById("total_expense");
+	let Profit = document.getElementById("total_profit");
+
+let datacontainer = document.getElementById("recent_activity")
 
     //appending form data
 
     window.onload = async () => {
-        let res = await fetch("http://localhost:4000/budget/viewalldata", {
+        const res = await fetch("http://localhost:4000/budget/viewalldata", {
             headers: {
                 "authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
             }
@@ -162,10 +211,53 @@
         })
 
         appendData(await res.json())
+
+
+        
+
+
+		let res2 = await fetch("http://localhost:4000/budget/totalincome", {
+			headers: {
+				"authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+			}
+
+		})
+		let totalIncome = await res2.json();
+		console.log(totalIncome)
+
+		AllIncome.innerText = "₹ " + totalIncome.TotalIncome
+
+
+
+		let res3 = await fetch("http://localhost:4000/budget/totalexpense", {
+			headers: {
+				"authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+			}
+
+		})
+		let totalExpense = await res3.json();
+		console.log(totalExpense)
+
+		AllExpense.innerText = "₹ " + totalExpense.TotalExpense
+
+
+
+
+		let res4 = await fetch("http://localhost:4000/budget/totalprofit", {
+			headers: {
+				"authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+			}
+
+		})
+		let totalProfit = await res4.json();
+		console.log(totalProfit)
+
+		Profit.innerText = "₹ " + totalProfit.totalProfit
+
     }
     function appendData(data) {
 
-        data.forEach(element => {
+        data.forEach ((element) => {
             // datacontainer
             let title = element.title;
             let type = element.type;
@@ -173,8 +265,9 @@
             let category = element.category
             let date = element.date
             let amount = element.amount
+            
             datacontainer.innerHTML += `
-        <div id = "Datacard1"> <div id = "Datacard">
+            <div id = "Datacard1"><div id = "Datacard">
             <div id = "sp"><h3 id="titlee">${title}</h3>
                 </div>
                             
@@ -186,11 +279,44 @@
                             <p id="amountt"><i class='bx bxs-badge-dollar'></i> ₹ ${amount}</p>
                             
                         </div>
-                        <div><button id="updateBtn">Update <i class='bx bxs-edit-alt'></i></button>
-                        <button id="deleteBtn">Delete <i class='bx bxs-box'></i></i></button></div>
-        </div>`
+                        <div><button id="updateBtn" >Update <i class='bx bxs-edit-alt'></i></button>
+						<button onclick = "deleteData('${element._id}')"  id="deleteBtn" class="deleteBtn">Delete</button>
+                        </div>
+                    </div>`
+
+   
         });
 
-    }</script>
+    }
+
+    
+async function deleteData(dataId) {
+  try {
+	const id = event.target.dataset.id;
+
+    let res5 = await fetch(`http://localhost:4000/budget/deldata/${dataId}`, {
+      method: 'DELETE',
+      headers: {
+        'authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+      }
+    });
+
+    if (id===dataId) {
+		const data = await res.json()
+    	console.log(data)
+    	appendData(data) 
+    } else {
+		// Error occurred while deleting the data, handle it accordingly
+		window.location.reload();
+      console.log('Error:', res5.statusText);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+   
+   
+    </script>
 
 </html>

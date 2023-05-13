@@ -26,7 +26,7 @@ googleRouter.get(
         expiresIn: 60 * 60 * 7,
       }
     );
-    res.redirect(`/?token=${token}&rtoken=${rtoken}`);
+    res.redirect(`/admin.html?token=${token}&rtoken=${rtoken}`);
   }
 );
 

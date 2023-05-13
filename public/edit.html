@@ -25,7 +25,7 @@
 	</a>
 	<ul class="side-menu top">
 		<li class="active">
-			<a href="/public/admin.html">
+			<a href="admin.html">
 				<i class='bx bxs-dashboard' ></i>
 				<span class="text">Dashboard</span>
 			</a>
@@ -110,21 +110,21 @@
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_profit"></h3>
+						<h3 id="total_profit">00.00</h3>
 						<p>Total Profit</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_income"></h3>
+						<h3 id="total_income">00.00</h3>
 						<p>Total Income</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3 id="total_expense">$2543</h3>
+						<h3 id="total_expense">00.00</h3>
 						<p>Total Expense</p>
 					</span>
 				</li>
@@ -208,6 +208,15 @@
     
 </body>
     <script>
+		const switchMode = document.getElementById('switch-mode');
+
+switchMode.addEventListener('change', function () {
+	if(this.checked) {
+		document.body.classList.add('dark');
+	} else {
+		document.body.classList.remove('dark');
+	}
+})
 
 
 
@@ -364,13 +373,38 @@ data.forEach(element => {
 						<p id="datee">Date:  ${date.substring(0,10)}</p>
 						<p id="amountt">Amount:  ₹ ${amount}</p>
 						<button id="updateBtn">Update</button>
-						<button id="deleteBtn">Delete</button>
+						<button onclick = "deleteData('${element._id}')"  id="deleteBtn" class="deleteBtn">Delete</button>
 						</div>
 	`
 });
 
 }
 
+
+async function deleteData(dataId) {
+  try {
+	const id = event.target.dataset.id;
+
+    let res5 = await fetch(`http://localhost:4000/budget/deldata/${dataId}`, {
+      method: 'DELETE',
+      headers: {
+        'authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+      }
+    });
+
+    if (id===dataId) {
+		const data = await res.json()
+    	console.log(data)
+    	appendData(data) 
+    } else {
+		// Error occurred while deleting the data, handle it accordingly
+		window.location.reload();
+      console.log('Error:', res5.statusText);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 
 // appending total Income
