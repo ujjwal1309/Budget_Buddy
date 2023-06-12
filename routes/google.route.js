@@ -17,13 +17,13 @@ googleRouter.get(
   }),
   function (req, res) {
     const token = jwt.sign({ user: req.user.email }, process.env.PRIVATE_KEY, {
-      expiresIn: 60 * 60 * 24 * 7,
+      expiresIn: 60 * 60,
     });
     const rtoken = jwt.sign(
       { user: req.user.email },
       process.env.REFRESH_PRIVATE_KEY,
       {
-        expiresIn: 60 * 60 * 24 * 24,
+        expiresIn: 60 * 60 * 7,
       }
     );
     res.redirect(`/admin.html?token=${token}&rtoken=${rtoken}`);

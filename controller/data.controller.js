@@ -268,6 +268,9 @@ const DatabyTitle = async (req,res)=>{
     //     query.title = { $regex: new RegExp(regexStr, "i") };
     // // query.device = {$in: [device1,device2]};
     // }
+  
+      
+  
       const data = await DataModel.find(query);
       res.send(data);
     } catch (err) {

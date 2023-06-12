@@ -606,14 +606,20 @@ body {
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-/* #sp {
-	border: 1px solid red;
-	width: 300px;
+#sp {
+	/* border: 1px solid red; */
+	width: 200px;
+	
 }
 
 #sp h3 {
 	font-weight: 400;
-} */
+	text-align: start;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	
+}
 
 #Datacard {
 	gap: 30px;
@@ -625,8 +631,8 @@ body {
 
 #updateBtn,
 #deleteBtn {
-	width: 9rem;
-	height: 3rem;
+	width: 6rem;
+	height: 2.5rem;
 	background-color: green;
 	color: #fff;
 	border: none;

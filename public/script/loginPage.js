@@ -6,7 +6,8 @@
 //   window.location.href = "index.html";
 // });
 let loginForm = document.getElementById("loginForm");
-loginForm.addEventListener("submit", async function (event) {
+loginForm
+  .addEventListener("submit", async function (event) {
     event.preventDefault();
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
