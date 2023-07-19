@@ -18,7 +18,9 @@ app.use(cors());
 
 
 
-
+app.get("/",(req,res)=>{
+  res.send("Welcome to Budget Buddy")
+})
 app.use("/auth",googleRouter);
 app.use("/users",userRouter);
 app.use("/budget",auth, DataRouter);
