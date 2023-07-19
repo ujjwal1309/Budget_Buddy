@@ -230,7 +230,7 @@ e.preventDefault();
 
 
 //sending the data
-const res =  await fetch("https://bbuddy.onrender.com/budget/adddata", {
+const res =  await fetch("https://bbuddybe.onrender.com/budget/adddata", {
     method: "POST",
     headers: {
 	      "Content-Type": "application/json",
@@ -261,7 +261,7 @@ window.location.reload()
 
 // /allincome',AllIncome     ->ROUTE
 
-// const displayData =  await fetch("https://bbuddy.onrender.com/allincome", {
+// const displayData =  await fetch("https://bbuddybe.onrender.com/allincome", {
 //     method: "GET",
 //     headers: {
 // 	      "Content-Type": "application/json",
@@ -294,7 +294,7 @@ let Profit =  document.getElementById("total_profit");
 //appending form data
 
 window.onload = async()=>{
-	let res = await fetch("https://bbuddy.onrender.com/budget/allincome" ,{
+	let res = await fetch("https://bbuddybe.onrender.com/budget/allincome" ,{
 		headers :  {
 			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
 		}
@@ -305,7 +305,7 @@ console.log(formData);
 
 appendData(formData)
 
-let res2 = await fetch("https://bbuddy.onrender.com/budget/totalincome" ,{
+let res2 = await fetch("https://bbuddybe.onrender.com/budget/totalincome" ,{
 		headers :  {
 			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
 		}
@@ -318,7 +318,7 @@ AllIncome.innerText = "₹ "  + totalIncome.TotalIncome
 
 
 
-let res3 = await fetch("https://bbuddy.onrender.com/budget/totalexpense" ,{
+let res3 = await fetch("https://bbuddybe.onrender.com/budget/totalexpense" ,{
 		headers :  {
 			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
 		}
@@ -332,7 +332,7 @@ AllExpense.innerText = "₹ "  + totalExpense.TotalExpense
 
 
 
-let res4 = await fetch("https://bbuddy.onrender.com/budget/totalprofit" ,{
+let res4 = await fetch("https://bbuddybe.onrender.com/budget/totalprofit" ,{
 		headers :  {
 			"authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
 		}

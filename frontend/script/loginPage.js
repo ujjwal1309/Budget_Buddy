@@ -11,7 +11,7 @@ loginForm.addEventListener("submit", async function (event) {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     
-    let res = await fetch("https://bbuddy.onrender.com/users/login", {
+    let res = await fetch("https://bbuddybe.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
