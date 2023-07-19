@@ -1,0 +1,51 @@
+/* fORM DATA CSS */
+
+#salary-form {
+
+
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+label {
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#comments{
+	display:inline;
+}
+
+#title, #income-option, #amount, #date, #comments{
+	display: inline-block;
+	padding: 8px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+} 
+
+/* .submitBtn {
+	background-color: #4bcb87;
+	color: white;
+	cursor: pointer;
+	width: 250px;
+	margin-left: 30px;
+} */
+
+.submitBtn:hover {
+	
+
+	
+	background-color: #18d159;
+}
+
+

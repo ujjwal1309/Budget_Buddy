@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 250px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#navbar-signup {
+    background-color:#ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#navbar-signup a {
+    color: rgb(5, 94, 43);
+    text-decoration: none;
+    padding-top: 15px;
+    margin-top: 5%;
+    font-size: larger;
+}
+
+
+
+/* all navbar items above  */
+
+#allContent {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+#L1 {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 600;
+
+}
+
+#L2 {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 600;
+
+}
+
+#email {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color:rgb(197, 236, 220);
+    border-radius: 34px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#password {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: rgb(197, 236, 220);
+    border-radius: 34px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#divForm{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; 
+    padding: 30px;
+    border-radius: 10px;
+    
+
+}
+
+#divForm h2 {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 30px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 32px;
+    color: rgb(55, 55, 55);
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+
+#LoginBtn{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #24e0a4;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+    cursor: pointer;
+}
+
+#LoginBtn:hover {
+    background-color: #00f3a6;
+  }
+
+  #gmail{
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #f03b3b;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+  #fb{
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color: #eebc04;
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+#acc{
+    box-sizing: border-box;
+    /* margin: 0px 8px; */
+    min-width: 0px;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 20px;
+    color: rgb(55, 55, 55);
+    font-weight: 400;
+    text-align: center;
+    /* margin-left: 30%; */
+    /* margin-bottom: 25px; */
+    
+}
+#createAcc{
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+    width: 100%;
+    background-color:rgb(197, 236, 220);
+    border-radius: 54px;
+    padding: 10px;
+    border: none;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: large;
+    cursor: pointer;
+
+}
+
+#createAcc:hover {
+    background-color: #00f3a6;
+  }
+
+#messageLogin{
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+#closebtn{
+    margin-right: 20px;
+    margin-top: 18px;
+}
+#banners>img{
+ 
+    width:80%;
+}
+
+
+@media all and (max-width:500px) {
+   #banners>img{
+    display: none;
+   }
+  
+}
+
+ #banners>img:hover {
+    transform: scale(1.050); 
+ }  
+
+
+ /* footer  */
+
+ .footer {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.footer ul li {
+    padding: 10px;
+}
+
+/* /////last//////////////////////////////// */
+.heart-emoji {
+    font-size: 20px;
+    /* Change the size to your preference */
+    color: #808080;
+    /* Change the color to your preference */
+}
+
+.last {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+}
+
+.last .logolast img {
+    width: 90%;
+}
+.last .logolast .privacy{
+    margin-top: 50px;
+    /* border: 2px solid red; */
+
+}
+
+.last .app img {
+    width: 50%;
+}
+
+.btnlast div {
+    margin-top: 20px;
+    padding: 2px;
+    /* border: 2px solid red; */
+}
+
+/* /////end//////////////////////////////// */
+.icon1 {
+    margin-top: 20px;
+}
+
+
+/* //footericon */
+.footer-iconTop{
+margin-left: 90%;
+background-color: rgb(36, 224, 164);
+margin-bottom: 20px;
+border: none;
+border-radius: 30px;
+
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 0.8rem;
+    
+}
+
+#login {
+    color: black;
+    width: 9rem;
+    height: 7vh;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 34px;
+    background-color: white;
+}
+#login a{
+    text-decoration: none;
+}
+
+#login:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+#register {
+    width: 9rem;
+    height: 7vh;
+    cursor: pointer;
+    color: black;
+    background-color: rgb(36, 224, 164);
+    border: none;
+    border-radius: 34px;
+}

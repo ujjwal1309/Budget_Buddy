@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/signUpPage.css">
+    
+</head>
+
+
+<body>
+
+    <div id="navbar-signup">
+        <nav>
+            <img src="./images/projectnxm201logo.png" alt="Logo" id="logo">
+
+        </nav>
+        <div id="closebtn"><a href="index.html"> Close X</a></div>
+    </div>
+    <!-- Form and image div is inside this -->
+    <div id="Maindiv">
+        <div id="Formdiv">
+            <h2 id="heading" style="color: #01874f;">Sign Up</h2>
+            <form id="form" action="">
+                <div id="for4inputs">
+                    <div>
+                        <label for="">First Name</label> <br>
+                        <input id="input1" type="text" placeholder="Enter First Name" required>
+                    </div>
+                    <div>
+                        <label for="">Last Name</label> <br>
+                        <input id="input2" type="text" placeholder="Enter Last Name" required>
+                    </div>
+                    <div>
+                        <label for="">Email Address</label> <br>
+                        <input id="input3" type="email" placeholder="Enter Email Address" required>
+                    </div>
+                    <div>
+                        <label for="">Mobile Number</label> <br>
+                        <input id="input4" type="text"  placeholder="Enter Mobile Number" maxlength="10" pattern="[0-9]{1}[0-9]{9}" requireds >
+                    </div>
+                    <div>
+                        <label for="">Password</label> <br>
+                        <input id="input5" type="password" placeholder="Enter Password" required>
+                    </div>
+                    
+                </div>
+
+               <span id="messageSignUp"></span>           
+    
+                <div>
+                    <input type="submit" id="signUpBtn" value="Sign Up">
+
+                </div>
+                <div id="instructions">
+                    <p>* By creating this account, I agree to the <u>Terms of Service</u> .
+                    </p> <br>
+                   
+                </div>
+
+            </form>
+            <br>
+            <hr style="max-width: 490px; margin-left: 75px; margin-bottom: 15px;">
+
+        </div>
+        <div id="banner">
+            <img src="https://pocketguard.com/wp-content/themes/pocket-guard/assets/images/intro/home/pic-intro.webp" alt="">
+        </div>
+        </div>
+
+        <!-- footer  -->
+       
+
+
+    <!-- ///footer ////////////////////////////////// -->
+ 
+    <hr style="border: 2px solid black; width:75%; margin: auto; margin-top: 3%;">
+ 
+    <div style="padding: 45px;" class="last">
+        <div class="logolast"><img src="./images/projectnxm201logo.png" alt="">
+            <p>© 2023 Budget Buddy</p>
+            <p class="privacy"> Privacy Policy Terms of Use Copyright & Content Policy</p>
+
+        </div>
+        <div class="app">
+            <h3>Get the app</h3>
+            <div class="one111">
+                <div><img
+                        src="https://pocketguard.com/wp-content/themes/pocket-guard/assets/images/app/pic-app-store@2x.png"
+                        alt=""></div>
+                <div><img
+                        src="https://pocketguard.com/wp-content/themes/pocket-guard/assets/images/app/pic-google-play@2x.png"
+                        alt=""></div>
+            </div>
+        </div>
+
+        <div class="btnlast">
+            <h3>Have any questions?</h3>
+            <div><button id="register"><b>Contact support in</b></button></div>
+            <div><button id="login"><b>FAQ</b> </button></div>
+        </div>
+        <div>
+            <h3>Share your <span class="heart-emoji">&#10084;&#65039;</h3>
+            <div class="icon1">
+                <box-icon name='facebook' type='logo' animation='tada' color='#e01e1e'></box-icon>
+                <box-icon name='twitter' type='logo' animation='flashing' color='#e01e1e'></box-icon>
+                <box-icon name='instagram' type='logo' animation='burst' color='#e01e1e'></box-icon>
+            </div>
+        </div>
+    </div>
+
+        <script src="./script/signUpPage.js"></script>
+
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
