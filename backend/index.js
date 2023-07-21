@@ -7,6 +7,7 @@ const jwt=require("jsonwebtoken");
 const {googleRouter} = require("./routes/google.route");
 const {DataRouter} = require('./routes/data.route');
 const { userRouter } = require("./routes/user.routes");
+const { swaggerServe, swaggerSetup } = require('./sawgger')  
 require("dotenv").config();
 
 const  {auth}= require("./middlewares/auth")
@@ -18,7 +19,7 @@ app.use(cors());
 
 
 
-
+app.use("/api-docs", swaggerServe, swaggerSetup); 
 app.use("/auth",googleRouter);
 app.use("/users",userRouter);
 app.use("/budget",auth, DataRouter);

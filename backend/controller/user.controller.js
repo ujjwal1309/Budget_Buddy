@@ -56,7 +56,7 @@ const login = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const email = req.user;
-    const user = await User.find({ email });
+    const user = await User.find();
     res.send(user);
   } catch (error) {
     res.send({ msg: "error", error: error.message });

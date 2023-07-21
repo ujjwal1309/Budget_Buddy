@@ -8,12 +8,15 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
-    "passport": "^0.6.0",  
+    "passport": "^0.6.0",
     "passport-azure-ad-oauth2": "^0.0.4",
     "passport-google-oauth20": "^2.0.0",
     "passport-microsoft": "^1.0.0",
+    "swagger": "^0.7.5",
+    "swagger-ui-express": "^5.0.0",
     "winston": "^3.8.2",
-    "winston-mongodb": "^5.1.1"
+    "winston-mongodb": "^5.1.1",
+    "yamljs": "^0.3.0"
   },
   "name": "raspy-recess-4206",
   "description": "",

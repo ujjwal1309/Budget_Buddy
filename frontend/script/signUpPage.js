@@ -12,7 +12,7 @@ form.addEventListener("submit", async function (event) {
     password: form.input5.value,
   };
 
-  await fetch("https://bbuddy.onrender.com/users/signup", {
+  await fetch("https://bbuddybe.onrender.com/users/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
