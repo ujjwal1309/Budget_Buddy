@@ -1,3 +1,4 @@
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { redisClient } = require("../helpers/redis");
@@ -78,3 +79,4 @@ const logout = async (req, res) => {
 };
 
 module.exports = { signup, login, logout, getUser };
+

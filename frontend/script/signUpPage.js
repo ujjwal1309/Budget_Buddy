@@ -1,3 +1,4 @@
+
 let form = document.getElementById("form");
 // let dataArr = JSON.parse(localStorage.getItem("userData")) || [];
 const messageSignUp = document.getElementById("messageSignUp");
@@ -30,3 +31,4 @@ form.addEventListener("submit", async function (event) {
   window.location.href = "loginPage.html";
   // localStorage.setItem("userData", JSON.stringify(dataArr));
 });
+
