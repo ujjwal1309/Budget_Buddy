@@ -1,3 +1,4 @@
+
 // const inputdataArr = JSON.parse(localStorage.getItem("userData")) || [];
 // const messageLogin = document.getElementById("messageLogin");
 // const logo = document.getElementById("logo");
@@ -27,17 +28,20 @@ loginForm.addEventListener("submit", async function (event) {
 console.log(data);
 
 //setting data in local storage
-localStorage.setItem("token", JSON.stringify(data.token))
-localStorage.setItem("refresh", JSON.stringify(data.refreshToken))
+// localStorage.setItem("token", JSON.stringify(data.token))
+// localStorage.setItem("refresh", JSON.stringify(data.refreshToken))
 
 
 if(data.token=== undefined){
   alert("Invalid Credential")
 }else{
   // console.log("78964")
+  localStorage.setItem("token", data.token);
+      localStorage.setItem("refreshToken", data.refreshToken);
  alert("Login Successful")
  window.location.href = "admin.html";
 }
 
   });
+
 

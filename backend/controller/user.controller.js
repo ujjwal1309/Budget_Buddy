@@ -1,3 +1,4 @@
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { redisClient } = require("../helpers/redis");
@@ -56,7 +57,7 @@ const login = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const email = req.user;
-    const user = await User.find({ email });
+    const user = await User.find();
     res.send(user);
   } catch (error) {
     res.send({ msg: "error", error: error.message });
@@ -78,3 +79,4 @@ const logout = async (req, res) => {
 };
 
 module.exports = { signup, login, logout, getUser };
+

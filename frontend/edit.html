@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
 	</a>
 	<ul class="side-menu top">
 		<li class="active">
-			<a href="/public/admin.html">
+			<a href="admin.html">
 				<i class='bx bxs-dashboard' ></i>
 				<span class="text">Dashboard</span>
 			</a>
@@ -226,7 +227,7 @@ let comments = document.getElementById("comments");
 formData.addEventListener('submit', async(e)=>{
 e.preventDefault();
 
-// console.log("hjdsbhjf");
+
 
 
 //sending the data
@@ -255,35 +256,7 @@ window.location.reload()
 
 
 
-//appending Income Data On the page
 
-// recent_activity    ->div id
-
-// /allincome',AllIncome     ->ROUTE
-
-// const displayData =  await fetch("https://bbuddybe.onrender.com/allincome", {
-//     method: "GET",
-//     headers: {
-// 	      "Content-Type": "application/json",
-// 		  "authorization" : `Bearer ${JSON.parse(localStorage.getItem("token"))}`
-//     },
-//     body: JSON.stringify({
-//       title: title.value,
-   
-//        type :"Income",
-// 	   category :category.value,
-//       amount: amount.value,
-// 	  date: date.value,
-//       comment: comments.value
-	   
-//     }),
-//   });
-// let data = await res.json()
-// console.log(data);
-
-
-
-//appending t income data
 
 let datacontainer = document.getElementById("recent_activity")
 let AllIncome = document.getElementById("total_income");
@@ -370,17 +343,5 @@ data.forEach(element => {
 });
 
 }
-
-
-
-// appending total Income
-
-
-
-
-
-
-
     </script>
 </html>
-    

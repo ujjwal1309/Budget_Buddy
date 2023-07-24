@@ -1,4 +1,5 @@
 
+
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -7,6 +8,7 @@ const jwt=require("jsonwebtoken");
 const {googleRouter} = require("./routes/google.route");
 const {DataRouter} = require('./routes/data.route');
 const { userRouter } = require("./routes/user.routes");
+const { swaggerServe, swaggerSetup } = require('./sawgger')  
 require("dotenv").config();
 
 const  {auth}= require("./middlewares/auth")
@@ -18,9 +20,7 @@ app.use(cors());
 
 
 
-app.get("/",(req,res)=>{
-  res.send("Welcome to Budget Buddy")
-})
+app.use("/api-docs", swaggerServe, swaggerSetup); 
 app.use("/auth",googleRouter);
 app.use("/users",userRouter);
 app.use("/budget",auth, DataRouter);
@@ -35,3 +35,4 @@ app.listen(port, async () => {
     console.log(error);
   }
 })
+

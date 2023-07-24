@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
 	  </a>
 	  <ul class="side-menu top">
 		  <li class="active">
-			  <a href="/public/admin.html">
+			  <a href="admin.html">
 				  <i class='bx bxs-dashboard' ></i>
 				  <span class="text">Dashboard</span>
 			  </a>
@@ -371,42 +372,17 @@ data.forEach(element => {
 						<button onclick = "deleteRestaurant("${element._id}")"  id="${element._id}" class="deleteBtn">Delete</button>
 						</div>
 	`
-// console.log(element._id)
+
 
 
 });
 
 
 }
-let deleteBTN = document.querySelectorAll(".deleteBtn")
-console.log(deleteBTN)
-
-// function deleteData(id){
-// 	console.log(id)
-
-
-// }
-const deleteRestaurant = (id) => {
-console.log(id)
-// fetch(`https://bbuddybe.onrender.com/budget/totalexpense/${id}`,{
-// 	method : "DELETE",
-// 	headers : {
-// 		"Content-Type" : "application/json"
-// 	}
-// }).then((res)=>{
-// 	console.log(res)
-// })
-
-//     axios({
-//       url: `${process.env.REACT_APP_URL}/restaurants/${id}`,
-//       method: "delete",
-//     }).then(() => {
-//       fetchAndUpdateData(page, sortOrder,filterby);
-//     });
-  };
 
 
 
 
 	</script>
+
 </html>
