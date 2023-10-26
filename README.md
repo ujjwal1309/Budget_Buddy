@@ -3,6 +3,7 @@ This project is designed to help you track your finances using the PocketGuard b
 <br>
 ## Backend Link
 ## https://bbuddy.onrender.com
-![Image Alt Text](https://ibb.co/bzB7dHT)
-![Image Alt Text](https://ibb.co/khXQjxZ)
-![Image Alt Text](https://ibb.co/P40XCKs)
+![Screenshot-2023-03-15-211910](https://i.ibb.co/Rz07Hhf/Screenshot-2023-03-15-211910.png)
+![Screenshot-2023-10-26-192224](https://i.ibb.co/LC1nm8K/Screenshot-2023-10-26-192224.png)
+![Screenshot-2023-10-26-192124](https://i.ibb.co/4M3vNzw/Screenshot-2023-10-26-192124.png)
+
